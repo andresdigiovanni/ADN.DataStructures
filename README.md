@@ -3,6 +3,7 @@
 ADN.DataStructures is a cross-platform open-source library which provides data structures utilities to .NET developers.
 
 [![Build Status](https://travis-ci.org/andresdigiovanni/ADN.DataStructures.svg?branch=master)](https://travis-ci.org/andresdigiovanni/ADN.DataStructures)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
 

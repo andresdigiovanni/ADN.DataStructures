@@ -1,0 +1,9 @@
+language: csharp
+solution: ADN.DataStructures.sln
+mono: none
+dotnet: 2.0.0
+script:
+  - dotnet restore
+  - dotnet build ./src/ADN.DataStructures/
+  - dotnet build ./tests/ADN.DataStructures.Tests/
+  - dotnet test ./tests/ADN.DataStructures.Tests/

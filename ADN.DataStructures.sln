@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADN.DataStructures", "ADN.DataStructures\ADN.DataStructures.csproj", "{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADN.DataStructures", "src\ADN.DataStructures\ADN.DataStructures.csproj", "{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9CD84742-3CDB-4142-8BA8-BD55383464B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4905774B-C73E-4C83-AEC9-B7916B71D3B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADN.DataStructures.Tests", "tests\ADN.DataStructures.Tests\ADN.DataStructures.Tests.csproj", "{947D2332-7E2D-4FC0-89F1-9E47722B9EB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947D2332-7E2D-4FC0-89F1-9E47722B9EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947D2332-7E2D-4FC0-89F1-9E47722B9EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947D2332-7E2D-4FC0-89F1-9E47722B9EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947D2332-7E2D-4FC0-89F1-9E47722B9EB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{870C9FBD-AD49-4B53-9B64-23AA83D18BB2} = {9CD84742-3CDB-4142-8BA8-BD55383464B2}
+		{947D2332-7E2D-4FC0-89F1-9E47722B9EB2} = {4905774B-C73E-4C83-AEC9-B7916B71D3B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2930E96-45C3-4E1A-9076-45B3F34423B9}

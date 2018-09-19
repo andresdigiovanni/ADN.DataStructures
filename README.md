@@ -18,6 +18,10 @@ Install-Package ADN.DataStructures
 
 Or alternatively you can add the ADN.DataStructures package from within Visual Studio's NuGet package manager.
 
+## Examples
+
+Please find examples and the documentation at the [wiki](https://github.com/andresdigiovanni/ADN.DataStructures/wiki) of this repository.
+
 ## Contributing
 
 We welcome contributions! Please review our [contribution guide](CONTRIBUTING.md).

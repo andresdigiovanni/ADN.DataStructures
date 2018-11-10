@@ -5,8 +5,6 @@ ADN.DataStructures is a cross-platform open-source library which provides data s
 [![Build Status](https://travis-ci.org/andresdigiovanni/ADN.DataStructures.svg?branch=master)](https://travis-ci.org/andresdigiovanni/ADN.DataStructures)
 [![NuGet](https://img.shields.io/nuget/v/ADN.DataStructures.svg)](https://www.nuget.org/packages/ADN.DataStructures/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/andresdigiovanni/ADN.DataStructures?branch=master)](https://bettercodehub.com/)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.DataStructures&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.DataStructures)
-[![Quality](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.DataStructures&metric=alert_status)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.DataStructures)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation

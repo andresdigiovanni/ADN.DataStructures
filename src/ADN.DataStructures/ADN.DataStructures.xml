@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADN.DataStructures</name>
+    </assembly>
+    <members>
+        <member name="T:ADN.DataStructures.BidirHashtable">
+            <summary>
+            Represents a collection of key/value pairs that are organized based on both hash code.
+            </summary>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Add(System.Object,System.Object)">
+            <summary>
+            Adds an element with the specified key and value into the BidirHashtable.
+            </summary>
+            <param name="key">The key of the element to add.</param>
+            <param name="val">The value of the element to add.</param>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Clear">
+            <summary>
+            Removes all elements from the BidirHashtable.
+            </summary>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            bidirHashtable.Clear();
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Contains(System.Object)">
+            <summary>
+            Determines whether the BidirHashtable contains a specific key.
+            </summary>
+            <param name="key">The key to locate in the BidirHashtable.</param>
+            <returns>True if the BidirHashtable contains an element with the specified key; otherwise, false.</returns>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            var result = bidirHashtable.Contains("key");
+            
+            /*
+            result is true
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.ContainsValue(System.Object)">
+            <summary>
+            Determines whether the BidirHashtable contains a specific value.
+            </summary>
+            <param name="val">The value to locate in the BidirHashtable.</param>
+            <returns>True if the BidirHashtable contains an element with the specified value; otherwise, false.</returns>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            var result = bidirHashtable.ContainsValue("value");
+            
+            /*
+            result is true
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Count">
+            <summary>
+            Gets the number of key/value pairs contained in the BidirHashtable.
+            </summary>
+            <returns>The number of key/value pairs contained in the BidirHashtable.</returns>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            bidirHashtable.Add("key2", "value2");
+            var result = bidirHashtable.Count();
+            
+            /*
+            result is 2
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Get(System.Object)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="key">The key whose value to get.</param>
+            <returns>The value associated with the specified key.</returns>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            var result = bidirHashtable.Get("key");
+            
+            /*
+            result is "value"
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.GetKey(System.Object)">
+            <summary>
+            Gets the key associated with the specified value.
+            </summary>
+            <param name="val">The value whose key to get.</param>
+            <returns>The key associated with the specified value.</returns>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            var result = bidirHashtable.GetKey("value");
+            
+            /*
+            result is "key"
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Set(System.Object,System.Object)">
+            <summary>
+            Sets the value associated with the specified key.
+            </summary>
+            <param name="key">The key whose value to set.</param>
+            <param name="val">The value of the element to set.</param>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            bidirHashtable.Set("key", "foo");
+            var result = bidirHashtable.Get("key");
+            
+            /*
+            result is "foo"
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.Remove(System.Object)">
+            <summary>
+            Removes the element with the specified key from the BidirHashtable.
+            </summary>
+            <param name="key">The key of the element to remove.</param>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            bidirHashtable.Remove("key");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirHashtable.RemoveValue(System.Object)">
+            <summary>
+            Removes the element with the specified value from the BidirHashtable.
+            </summary>
+            <param name="val">The value of the element to remove.</param>
+            <example>
+            <code lang="csharp">
+            var bidirHashtable = new BidirHashtable();
+            bidirHashtable.Add("key", "value");
+            bidirHashtable.RemoveValue("value");
+            </code>
+            </example>
+        </member>
+        <member name="T:ADN.DataStructures.Heap`1">
+            <summary>
+            Array-based Heap implementation.
+            </summary>
+            <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Create a new heap.
+            </summary>
+            <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
+            <param name="isMaxHeap">If "true", this is a Max Heap, where the largest values rise to the top. Otherwise, this is a Min Heap.</param>
+        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.Count" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.IsEmpty" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Insert(`0)" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Peek" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Remove" -->
+        <member name="M:ADN.DataStructures.Heap`1.ShiftUp(System.Int32)">
+            <summary>
+            Move an element up the Heap.
+            </summary>
+            <param name="heapIndex"></param>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.ShiftDown(System.Int32)">
+            <summary>
+            Move an element down the Heap.
+            </summary>
+            <param name="heapIndex"></param>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.Swap(System.Int32,System.Int32)">
+            <summary>
+            Swap two items in the underlying array.
+            </summary>
+            <param name="index1"></param>
+            <param name="index2"></param>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.DoCompare(System.Int32,System.Int32)">
+            <summary>
+            Perform a comparison between two elements of the heap.
+            This method encapsulates the min/max behavior of the heap so the rest of the class can remain blissfully ignorant.
+            </summary>
+            <param name="initialIndex"></param>
+            <param name="contenderIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.DoubleHeap">
+            <summary>
+            Increase the size of the underlying storage.
+            </summary>
+        </member>
+        <member name="T:ADN.DataStructures.TwoKeyHashtable">
+            <summary>
+            Represents a collection of 2-keys/value trios that are organized based on the hash code of the 2-keys.
+            </summary>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Add(System.Object,System.Object,System.Object)">
+            <summary>
+            Adds an element with the specified keys and value into the TwoKeyHashtable.
+            </summary>
+            <param name="key">The first key of the element to add.</param>
+            <param name="key2">The second key of the element to add.</param>
+            <param name="val">The value of the element to add.</param>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Clear">
+            <summary>
+            Removes all elements from the TwoKeyHashtable.
+            </summary>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.Clear();
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Contains(System.Object,System.Object)">
+            <summary>
+            Determines whether the TwoKeyHashtable contains the two specific key element.
+            </summary>
+            <param name="key">The first key to locate in the TwoKeyHashtable.</param>
+            <param name="key2">The second key to locate in the TwoKeyHashtable.</param>
+            <returns>True if contains the two specific key element, false otherwise.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.Contains("key", "key2");
+            
+            /*
+            result is true
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.ContainsRow(System.Object)">
+            <summary>
+            Determines whether the TwoKeyHashtable contains the specific row.
+            </summary>
+            <param name="key">The key to locate in the TwoKeyHashtable.</param>
+            <returns>True if contains the specific key element, false otherwise.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.ContainsRow("key");
+            
+            /*
+            result is true
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Count(System.Object)">
+            <summary>
+            Gets the number of key/value pairs contained in a dimension of the TwoKeyHashtable.
+            </summary>
+            <param name="key">The dimension key of the TwoKeyHashtable.</param>
+            <returns>The number of elements contained in the TwoKeyHashtable for a specific dimension.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.Count("key");
+            
+            /*
+            result is 1
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.CountRow">
+            <summary>
+            Gets the number of first key trios contained in the TwoKeyHashtable.
+            </summary>
+            <returns>The number of elements contained in the TwoKeyHashtable.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.CountRow();
+            
+            /*
+            result is 1
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Item(System.Object,System.Object)">
+            <summary>
+            Gets the value associated with the specified keys.
+            </summary>
+            <param name="key">The first key whose value to get or set.</param>
+            <param name="key2">The second key whose value to get or set.</param>
+            <returns>The value associated with the specified key.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.Item("key", "key2");
+            
+            /*
+            result is "value"
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Keys">
+            <summary>
+            Gets an ICollection containing the keys in the TwoKeyHashtable.
+            </summary>
+            <returns>An ICollection containing the keys in the TwoKeyHashtable.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.Keys();
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.Remove(System.Object,System.Object)">
+            <summary>
+            Removes the element with the two specified keys from the TwoKeyHashtable.
+            </summary>
+            <param name="key">The first key of the element to remove.</param>
+            <param name="key2">The second key of the element to remove.</param>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            twoKeyHashtable.Remove("key", "key2");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.RemoveRow(System.Object)">
+            <summary>
+            Removes the row with the specified key from the TwoKeyHashtable.
+            </summary>
+            <param name="key">The key of the row to remove.</param>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            twoKeyHashtable.RemoveRow("key");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.TwoKeyHashtable.RowKeys(System.Object)">
+            <summary>
+            Gets an ICollection containing the keys of the specified row in the TwoKeyHashtable.
+            </summary>
+            <param name="key">The key of the row to gets the ICollection.</param>
+            <returns>An ICollection containing the keys of the specified row in the TwoKeyHashtable.</returns>
+            <example>
+            <code lang="csharp">
+            var twoKeyHashtable = new TwoKeyHashtable();
+            twoKeyHashtable.Add("key", "key2", "value");
+            var result = twoKeyHashtable.RowKeys("key");
+            </code>
+            </example>
+        </member>
+    </members>
+</doc>

@@ -33,17 +33,45 @@ namespace ADN.DataStructures
         /// <summary>
         /// Current size of the Heap.
         /// </summary>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(2);
+        /// heap.Insert(1);
+        /// heap.Insert(2);
+        /// var result = heap.Count;
+        /// 
+        /// /*
+        /// result is 2
+        /// */
+        /// </code>
+        /// </example>
         public int Count { get; private set; }
 
         /// <summary>
         /// Test to see if the Heap is empty.
         /// </summary>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(1);
+        /// var result = heap.IsEmpty;
+        /// 
+        /// /*
+        /// result is true
+        /// */
+        /// </code>
+        /// </example>
         public bool IsEmpty { get { return Count == 0; } }
 
         /// <summary>
         /// Add a new value to the Heap.
         /// </summary>
-        /// <param name="val"></param>
+        /// <param name="val">New value.</param>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(1);
+        /// heap.Insert(1);
+        /// </code>
+        /// </example>
         public void Insert(T val)
         {
             if (Count == _heap.Length)
@@ -58,7 +86,20 @@ namespace ADN.DataStructures
         /// <summary>
         /// View the value currently at the top of the Heap.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Value at the top of the Heap.</returns>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(1);
+        /// heap.Insert(1);
+        /// heap.Insert(2);
+        /// heap.Insert(3);
+        /// var result = heap.Peek();
+        /// 
+        /// /*
+        /// result is 1
+        /// */
+        /// </code>
+        /// </example>
         public T Peek()
         {
             if (_heap.Length == 0) throw new ArgumentOutOfRangeException("No values in heap");
@@ -68,7 +109,20 @@ namespace ADN.DataStructures
         /// <summary>
         /// Remove the value currently at the top of the Heap and return it.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Value at the top of the Heap.</returns>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(1);
+        /// heap.Insert(1);
+        /// heap.Insert(2);
+        /// heap.Insert(3);
+        /// var result = heap.Remove();
+        /// 
+        /// /*
+        /// result is 1
+        /// */
+        /// </code>
+        /// </example>
         public T Remove()
         {
             T output = Peek();

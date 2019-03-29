@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,25 +8,16 @@ namespace ADN.DataStructures
     /// Array-based Heap implementation.
     /// </summary>
     /// <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
-    public class Heap<T> where T : IComparable
+    public abstract class Heap<T> : IHeap<T> where T : IComparable
     {
-        private enum HeapType
-        {
-            Min,
-            Max
-        };
-
-        private readonly HeapType _heapType;
-        private T[] _heap;
+        protected T[] _heap;
 
         /// <summary>
         /// Create a new heap.
         /// </summary>
         /// <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
-        /// <param name="isMaxHeap">If "true", this is a Max Heap, where the largest values rise to the top. Otherwise, this is a Min Heap.</param>
-        public Heap(int minSize, bool isMaxHeap = false)
+        protected Heap(int minSize)
         {
-            _heapType = isMaxHeap ? HeapType.Max : HeapType.Min;
             _heap = new T[((int)Math.Pow(2, Math.Ceiling(Math.Log(minSize, 2))))];
         }
 
@@ -45,22 +36,7 @@ namespace ADN.DataStructures
         /// */
         /// </code>
         /// </example>
-        public int Count { get; private set; }
-
-        /// <summary>
-        /// Test to see if the Heap is empty.
-        /// </summary>
-        /// <example>
-        /// <code lang="csharp">
-        /// var heap = new Heap<int>(1);
-        /// var result = heap.IsEmpty;
-        /// 
-        /// /*
-        /// result is true
-        /// */
-        /// </code>
-        /// </example>
-        public bool IsEmpty { get { return Count == 0; } }
+        public int Count { get; protected set; }
 
         /// <summary>
         /// Add a new value to the Heap.
@@ -82,6 +58,21 @@ namespace ADN.DataStructures
             ShiftUp(Count);
             Count++;
         }
+
+        /// <summary>
+        /// Test to see if the Heap is empty.
+        /// </summary>
+        /// <example>
+        /// <code lang="csharp">
+        /// var heap = new Heap<int>(1);
+        /// var result = heap.IsEmpty;
+        /// 
+        /// /*
+        /// result is true
+        /// */
+        /// </code>
+        /// </example>
+        public bool IsEmpty { get { return Count == 0; } }
 
         /// <summary>
         /// View the value currently at the top of the Heap.
@@ -132,10 +123,6 @@ namespace ADN.DataStructures
             return output;
         }
 
-        /// <summary>
-        /// Move an element up the Heap.
-        /// </summary>
-        /// <param name="heapIndex"></param>
         private void ShiftUp(int heapIndex)
         {
             if (heapIndex == 0) return;
@@ -146,10 +133,6 @@ namespace ADN.DataStructures
             ShiftUp(parentIndex);
         }
 
-        /// <summary>
-        /// Move an element down the Heap.
-        /// </summary>
-        /// <param name="heapIndex"></param>
         private void ShiftDown(int heapIndex)
         {
             int child1 = heapIndex * 2 + 1;
@@ -162,11 +145,6 @@ namespace ADN.DataStructures
             ShiftDown(preferredChildIndex);
         }
 
-        /// <summary>
-        /// Swap two items in the underlying array.
-        /// </summary>
-        /// <param name="index1"></param>
-        /// <param name="index2"></param>
         private void Swap(int index1, int index2)
         {
             T temp = _heap[index1];
@@ -174,25 +152,8 @@ namespace ADN.DataStructures
             _heap[index2] = temp;
         }
 
-        /// <summary>
-        /// Perform a comparison between two elements of the heap.
-        /// This method encapsulates the min/max behavior of the heap so the rest of the class can remain blissfully ignorant.
-        /// </summary>
-        /// <param name="initialIndex"></param>
-        /// <param name="contenderIndex"></param>
-        /// <returns></returns>
-        private int DoCompare(int initialIndex, int contenderIndex)
-        {
-            T initial = _heap[initialIndex];
-            T contender = _heap[contenderIndex];
-            int value = initial.CompareTo(contender);
-            if (_heapType == HeapType.Max) value = -value;
-            return value;
-        }
+        protected abstract int DoCompare(int initialIndex, int contenderIndex);
 
-        /// <summary>
-        /// Increase the size of the underlying storage.
-        /// </summary>
         private void DoubleHeap()
         {
             var copy = new T[_heap.Length * 2];

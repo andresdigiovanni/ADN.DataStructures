@@ -175,50 +175,74 @@
             </summary>
             <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
         </member>
-        <member name="M:ADN.DataStructures.Heap`1.#ctor(System.Int32,System.Boolean)">
+        <member name="M:ADN.DataStructures.Heap`1.#ctor(System.Int32)">
             <summary>
             Create a new heap.
             </summary>
             <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
-            <param name="isMaxHeap">If "true", this is a Max Heap, where the largest values rise to the top. Otherwise, this is a Min Heap.</param>
         </member>
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.Count" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.IsEmpty" -->
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Insert(`0)" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.IsEmpty" -->
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Peek" -->
         <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Remove" -->
-        <member name="M:ADN.DataStructures.Heap`1.ShiftUp(System.Int32)">
+        <member name="T:ADN.DataStructures.IHeap`1">
             <summary>
-            Move an element up the Heap.
+            Array-based Heap implementation.
             </summary>
-            <param name="heapIndex"></param>
+            <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
         </member>
-        <member name="M:ADN.DataStructures.Heap`1.ShiftDown(System.Int32)">
+        <member name="P:ADN.DataStructures.IHeap`1.Count">
             <summary>
-            Move an element down the Heap.
+            Current size of the Heap.
             </summary>
-            <param name="heapIndex"></param>
         </member>
-        <member name="M:ADN.DataStructures.Heap`1.Swap(System.Int32,System.Int32)">
+        <member name="M:ADN.DataStructures.IHeap`1.Insert(`0)">
             <summary>
-            Swap two items in the underlying array.
+            Add a new value to the Heap.
             </summary>
-            <param name="index1"></param>
-            <param name="index2"></param>
+            <param name="val">New value.</param>
         </member>
-        <member name="M:ADN.DataStructures.Heap`1.DoCompare(System.Int32,System.Int32)">
+        <member name="P:ADN.DataStructures.IHeap`1.IsEmpty">
             <summary>
-            Perform a comparison between two elements of the heap.
-            This method encapsulates the min/max behavior of the heap so the rest of the class can remain blissfully ignorant.
+            Test to see if the Heap is empty.
             </summary>
-            <param name="initialIndex"></param>
-            <param name="contenderIndex"></param>
-            <returns></returns>
         </member>
-        <member name="M:ADN.DataStructures.Heap`1.DoubleHeap">
+        <member name="M:ADN.DataStructures.IHeap`1.Peek">
             <summary>
-            Increase the size of the underlying storage.
+            View the value currently at the top of the Heap.
             </summary>
+            <returns>Value at the top of the Heap.</returns>
+        </member>
+        <member name="M:ADN.DataStructures.IHeap`1.Remove">
+            <summary>
+            Remove the value currently at the top of the Heap and return it.
+            </summary>
+            <returns>Value at the top of the Heap.</returns>
+        </member>
+        <member name="T:ADN.DataStructures.MaxHeap`1">
+            <summary>
+            Array-based Heap implementation.
+            </summary>
+            <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
+        </member>
+        <member name="M:ADN.DataStructures.MaxHeap`1.#ctor(System.Int32)">
+            <summary>
+            Create a new heap.
+            </summary>
+            <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
+        </member>
+        <member name="T:ADN.DataStructures.MinHeap`1">
+            <summary>
+            Array-based Heap implementation.
+            </summary>
+            <typeparam name="T">Kind of thing being stored in the heap.</typeparam>
+        </member>
+        <member name="M:ADN.DataStructures.MinHeap`1.#ctor(System.Int32)">
+            <summary>
+            Create a new heap.
+            </summary>
+            <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
         </member>
         <member name="T:ADN.DataStructures.TwoKeyHashtable">
             <summary>

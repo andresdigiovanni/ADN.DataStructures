@@ -12,7 +12,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/andresdigiovanni/ADN.DataStructures/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/andresdigiovanni/ADN.DataStructures</PackageProjectUrl>
-    <PackageTags>Structures; Hashtable; Bidirectional; Multidimensional; Heap; Min-Heap; Max-Heap</PackageTags>
+    <PackageTags>Structures; Hashtable; Bidirectional; Multidimensional; Heap; MaxHeap; MinHeap</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl> 
     <RepositoryUrl>https://github.com/andresdigiovanni/ADN.DataStructures</RepositoryUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/andresdigiovanni/ADN.DataStructures/master/icon.png</PackageIconUrl>

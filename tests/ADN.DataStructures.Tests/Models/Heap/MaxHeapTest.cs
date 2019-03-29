@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
 namespace ADN.DataStructures.Tests
 {
-    public class HeapTest
+    public class MaxHeapTest
     {
         [Theory]
         [InlineData(0)]
@@ -13,7 +13,7 @@ namespace ADN.DataStructures.Tests
         [InlineData(10000)]
         public void Insert(int values)
         {
-            Heap<int> heap = new Heap<int>(1);
+            IHeap<int> heap = new MaxHeap<int>(1);
             for (int i = 0; i < values; i++)
             {
                 heap.Insert(i);
@@ -26,7 +26,7 @@ namespace ADN.DataStructures.Tests
         [Fact]
         public void IsEmpty()
         {
-            Heap<int> heap = new Heap<int>(0);
+            IHeap<int> heap = new MaxHeap<int>(0);
 
             Assert.True(heap.IsEmpty);
         }
@@ -35,28 +35,10 @@ namespace ADN.DataStructures.Tests
         [InlineData(0)]
         [InlineData(1)]
         [InlineData(10000)]
-        public void Peek_MinHeap(int values)
+        public void Peek(int values)
         {
             var result = true;
-            Heap<int> heap = new Heap<int>(1);
-
-            for (int i = values - 1; i > 0; i--)
-            {
-                heap.Insert(i);
-                result &= (i == heap.Peek());
-            }
-
-            Assert.True(result);
-        }
-
-        [Theory]
-        [InlineData(0)]
-        [InlineData(1)]
-        [InlineData(10000)]
-        public void Peek_MaxHeap(int values)
-        {
-            var result = true;
-            Heap<int> heap = new Heap<int>(1, true);
+            IHeap<int> heap = new MaxHeap<int>(1);
 
             for (int i = 0; i < values; i++)
             {
@@ -73,7 +55,7 @@ namespace ADN.DataStructures.Tests
         [InlineData(10000)]
         public void Remove(int values)
         {
-            Heap<int> heap = new Heap<int>(1);
+            IHeap<int> heap = new MaxHeap<int>(1);
             for (int i = 0; i < values; i++)
             {
                 heap.Insert(i);

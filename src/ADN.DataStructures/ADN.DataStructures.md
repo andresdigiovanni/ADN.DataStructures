@@ -15,12 +15,17 @@
   - [RemoveValue(val)](#M-ADN-DataStructures-BidirHashtable-RemoveValue-System-Object- 'ADN.DataStructures.BidirHashtable.RemoveValue(System.Object)')
   - [Set(key,val)](#M-ADN-DataStructures-BidirHashtable-Set-System-Object,System-Object- 'ADN.DataStructures.BidirHashtable.Set(System.Object,System.Object)')
 - [Heap\`1](#T-ADN-DataStructures-Heap`1 'ADN.DataStructures.Heap`1')
-  - [#ctor(minSize,isMaxHeap)](#M-ADN-DataStructures-Heap`1-#ctor-System-Int32,System-Boolean- 'ADN.DataStructures.Heap`1.#ctor(System.Int32,System.Boolean)')
-  - [DoCompare(initialIndex,contenderIndex)](#M-ADN-DataStructures-Heap`1-DoCompare-System-Int32,System-Int32- 'ADN.DataStructures.Heap`1.DoCompare(System.Int32,System.Int32)')
-  - [DoubleHeap()](#M-ADN-DataStructures-Heap`1-DoubleHeap 'ADN.DataStructures.Heap`1.DoubleHeap')
-  - [ShiftDown(heapIndex)](#M-ADN-DataStructures-Heap`1-ShiftDown-System-Int32- 'ADN.DataStructures.Heap`1.ShiftDown(System.Int32)')
-  - [ShiftUp(heapIndex)](#M-ADN-DataStructures-Heap`1-ShiftUp-System-Int32- 'ADN.DataStructures.Heap`1.ShiftUp(System.Int32)')
-  - [Swap(index1,index2)](#M-ADN-DataStructures-Heap`1-Swap-System-Int32,System-Int32- 'ADN.DataStructures.Heap`1.Swap(System.Int32,System.Int32)')
+  - [#ctor(minSize)](#M-ADN-DataStructures-Heap`1-#ctor-System-Int32- 'ADN.DataStructures.Heap`1.#ctor(System.Int32)')
+- [IHeap\`1](#T-ADN-DataStructures-IHeap`1 'ADN.DataStructures.IHeap`1')
+  - [Count](#P-ADN-DataStructures-IHeap`1-Count 'ADN.DataStructures.IHeap`1.Count')
+  - [IsEmpty](#P-ADN-DataStructures-IHeap`1-IsEmpty 'ADN.DataStructures.IHeap`1.IsEmpty')
+  - [Insert(val)](#M-ADN-DataStructures-IHeap`1-Insert-`0- 'ADN.DataStructures.IHeap`1.Insert(`0)')
+  - [Peek()](#M-ADN-DataStructures-IHeap`1-Peek 'ADN.DataStructures.IHeap`1.Peek')
+  - [Remove()](#M-ADN-DataStructures-IHeap`1-Remove 'ADN.DataStructures.IHeap`1.Remove')
+- [MaxHeap\`1](#T-ADN-DataStructures-MaxHeap`1 'ADN.DataStructures.MaxHeap`1')
+  - [#ctor(minSize)](#M-ADN-DataStructures-MaxHeap`1-#ctor-System-Int32- 'ADN.DataStructures.MaxHeap`1.#ctor(System.Int32)')
+- [MinHeap\`1](#T-ADN-DataStructures-MinHeap`1 'ADN.DataStructures.MinHeap`1')
+  - [#ctor(minSize)](#M-ADN-DataStructures-MinHeap`1-#ctor-System-Int32- 'ADN.DataStructures.MinHeap`1.#ctor(System.Int32)')
 - [TwoKeyHashtable](#T-ADN-DataStructures-TwoKeyHashtable 'ADN.DataStructures.TwoKeyHashtable')
   - [Add(key,key2,val)](#M-ADN-DataStructures-TwoKeyHashtable-Add-System-Object,System-Object,System-Object- 'ADN.DataStructures.TwoKeyHashtable.Add(System.Object,System.Object,System.Object)')
   - [Clear()](#M-ADN-DataStructures-TwoKeyHashtable-Clear 'ADN.DataStructures.TwoKeyHashtable.Clear')
@@ -309,8 +314,8 @@ Array-based Heap implementation.
 | ---- | ----------- |
 | T | Kind of thing being stored in the heap. |
 
-<a name='M-ADN-DataStructures-Heap`1-#ctor-System-Int32,System-Boolean-'></a>
-### #ctor(minSize,isMaxHeap) `constructor`
+<a name='M-ADN-DataStructures-Heap`1-#ctor-System-Int32-'></a>
+### #ctor(minSize) `constructor`
 
 ##### Summary
 
@@ -321,77 +326,140 @@ Create a new heap.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | minSize | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The minimum number of elements the heap is expected to hold. |
-| isMaxHeap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If "true", this is a Max Heap, where the largest values rise to the top. Otherwise, this is a Min Heap. |
 
-<a name='M-ADN-DataStructures-Heap`1-DoCompare-System-Int32,System-Int32-'></a>
-### DoCompare(initialIndex,contenderIndex) `method`
+<a name='T-ADN-DataStructures-IHeap`1'></a>
+## IHeap\`1 `type`
+
+##### Namespace
+
+ADN.DataStructures
 
 ##### Summary
 
-Perform a comparison between two elements of the heap.
-This method encapsulates the min/max behavior of the heap so the rest of the class can remain blissfully ignorant.
+Array-based Heap implementation.
 
-##### Returns
+##### Generic Types
 
+| Name | Description |
+| ---- | ----------- |
+| T | Kind of thing being stored in the heap. |
 
+<a name='P-ADN-DataStructures-IHeap`1-Count'></a>
+### Count `property`
+
+##### Summary
+
+Current size of the Heap.
+
+<a name='P-ADN-DataStructures-IHeap`1-IsEmpty'></a>
+### IsEmpty `property`
+
+##### Summary
+
+Test to see if the Heap is empty.
+
+<a name='M-ADN-DataStructures-IHeap`1-Insert-`0-'></a>
+### Insert(val) `method`
+
+##### Summary
+
+Add a new value to the Heap.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
-| contenderIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
+| val | [\`0](#T-`0 '`0') | New value. |
 
-<a name='M-ADN-DataStructures-Heap`1-DoubleHeap'></a>
-### DoubleHeap() `method`
+<a name='M-ADN-DataStructures-IHeap`1-Peek'></a>
+### Peek() `method`
 
 ##### Summary
 
-Increase the size of the underlying storage.
+View the value currently at the top of the Heap.
+
+##### Returns
+
+Value at the top of the Heap.
 
 ##### Parameters
 
 This method has no parameters.
 
-<a name='M-ADN-DataStructures-Heap`1-ShiftDown-System-Int32-'></a>
-### ShiftDown(heapIndex) `method`
+<a name='M-ADN-DataStructures-IHeap`1-Remove'></a>
+### Remove() `method`
 
 ##### Summary
 
-Move an element down the Heap.
+Remove the value currently at the top of the Heap and return it.
+
+##### Returns
+
+Value at the top of the Heap.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-ADN-DataStructures-MaxHeap`1'></a>
+## MaxHeap\`1 `type`
+
+##### Namespace
+
+ADN.DataStructures
+
+##### Summary
+
+Array-based Heap implementation.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Kind of thing being stored in the heap. |
+
+<a name='M-ADN-DataStructures-MaxHeap`1-#ctor-System-Int32-'></a>
+### #ctor(minSize) `constructor`
+
+##### Summary
+
+Create a new heap.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| heapIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
+| minSize | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The minimum number of elements the heap is expected to hold. |
 
-<a name='M-ADN-DataStructures-Heap`1-ShiftUp-System-Int32-'></a>
-### ShiftUp(heapIndex) `method`
+<a name='T-ADN-DataStructures-MinHeap`1'></a>
+## MinHeap\`1 `type`
+
+##### Namespace
+
+ADN.DataStructures
 
 ##### Summary
 
-Move an element up the Heap.
+Array-based Heap implementation.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Kind of thing being stored in the heap. |
+
+<a name='M-ADN-DataStructures-MinHeap`1-#ctor-System-Int32-'></a>
+### #ctor(minSize) `constructor`
+
+##### Summary
+
+Create a new heap.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| heapIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
-
-<a name='M-ADN-DataStructures-Heap`1-Swap-System-Int32,System-Int32-'></a>
-### Swap(index1,index2) `method`
-
-##### Summary
-
-Swap two items in the underlying array.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| index1 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
-| index2 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
+| minSize | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The minimum number of elements the heap is expected to hold. |
 
 <a name='T-ADN-DataStructures-TwoKeyHashtable'></a>
 ## TwoKeyHashtable `type`

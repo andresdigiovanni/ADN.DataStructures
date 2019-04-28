@@ -16,6 +16,11 @@
   - [Set(key,val)](#M-ADN-DataStructures-BidirHashtable-Set-System-Object,System-Object- 'ADN.DataStructures.BidirHashtable.Set(System.Object,System.Object)')
 - [Heap\`1](#T-ADN-DataStructures-Heap`1 'ADN.DataStructures.Heap`1')
   - [#ctor(minSize)](#M-ADN-DataStructures-Heap`1-#ctor-System-Int32- 'ADN.DataStructures.Heap`1.#ctor(System.Int32)')
+  - [Count](#P-ADN-DataStructures-Heap`1-Count 'ADN.DataStructures.Heap`1.Count')
+  - [IsEmpty](#P-ADN-DataStructures-Heap`1-IsEmpty 'ADN.DataStructures.Heap`1.IsEmpty')
+  - [Insert(val)](#M-ADN-DataStructures-Heap`1-Insert-`0- 'ADN.DataStructures.Heap`1.Insert(`0)')
+  - [Peek()](#M-ADN-DataStructures-Heap`1-Peek 'ADN.DataStructures.Heap`1.Peek')
+  - [Remove()](#M-ADN-DataStructures-Heap`1-Remove 'ADN.DataStructures.Heap`1.Remove')
 - [IHeap\`1](#T-ADN-DataStructures-IHeap`1 'ADN.DataStructures.IHeap`1')
   - [Count](#P-ADN-DataStructures-IHeap`1-Count 'ADN.DataStructures.IHeap`1.Count')
   - [IsEmpty](#P-ADN-DataStructures-IHeap`1-IsEmpty 'ADN.DataStructures.IHeap`1.IsEmpty')
@@ -326,6 +331,93 @@ Create a new heap.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | minSize | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The minimum number of elements the heap is expected to hold. |
+
+<a name='P-ADN-DataStructures-Heap`1-Count'></a>
+### Count `property`
+
+##### Summary
+
+Current size of the Heap.
+
+##### Example
+
+```csharp
+<![CDATA[var heap = new Heap<int>(2);]]> 
+```
+
+<a name='P-ADN-DataStructures-Heap`1-IsEmpty'></a>
+### IsEmpty `property`
+
+##### Summary
+
+Test to see if the Heap is empty.
+
+##### Example
+
+```csharp
+<![CDATA[var heap = new Heap<int>(1);]]> 
+```
+
+<a name='M-ADN-DataStructures-Heap`1-Insert-`0-'></a>
+### Insert(val) `method`
+
+##### Summary
+
+Add a new value to the Heap.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| val | [\`0](#T-`0 '`0') | New value. |
+
+##### Example
+
+```csharp
+<![CDATA[var heap = new Heap<int>(1);]]> 
+```
+
+<a name='M-ADN-DataStructures-Heap`1-Peek'></a>
+### Peek() `method`
+
+##### Summary
+
+View the value currently at the top of the Heap.
+
+##### Returns
+
+Value at the top of the Heap.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Example
+
+```csharp
+<![CDATA[var heap = new Heap<int>(1);]]> 
+```
+
+<a name='M-ADN-DataStructures-Heap`1-Remove'></a>
+### Remove() `method`
+
+##### Summary
+
+Remove the value currently at the top of the Heap and return it.
+
+##### Returns
+
+Value at the top of the Heap.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Example
+
+```csharp
+<![CDATA[var heap = new Heap<int>(1);]]> 
+```
 
 <a name='T-ADN-DataStructures-IHeap`1'></a>
 ## IHeap\`1 `type`

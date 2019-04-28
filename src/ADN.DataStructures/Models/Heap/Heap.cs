@@ -26,7 +26,7 @@ namespace ADN.DataStructures
         /// </summary>
         /// <example>
         /// <code lang="csharp">
-        /// var heap = new Heap<int>(2);
+        /// <![CDATA[var heap = new Heap<int>(2);]]>
         /// heap.Insert(1);
         /// heap.Insert(2);
         /// var result = heap.Count;
@@ -44,7 +44,7 @@ namespace ADN.DataStructures
         /// <param name="val">New value.</param>
         /// <example>
         /// <code lang="csharp">
-        /// var heap = new Heap<int>(1);
+        /// <![CDATA[var heap = new Heap<int>(1);]]>
         /// heap.Insert(1);
         /// </code>
         /// </example>
@@ -64,7 +64,7 @@ namespace ADN.DataStructures
         /// </summary>
         /// <example>
         /// <code lang="csharp">
-        /// var heap = new Heap<int>(1);
+        /// <![CDATA[var heap = new Heap<int>(1);]]>
         /// var result = heap.IsEmpty;
         /// 
         /// /*
@@ -80,7 +80,7 @@ namespace ADN.DataStructures
         /// <returns>Value at the top of the Heap.</returns>
         /// <example>
         /// <code lang="csharp">
-        /// var heap = new Heap<int>(1);
+        /// <![CDATA[var heap = new Heap<int>(1);]]>
         /// heap.Insert(1);
         /// heap.Insert(2);
         /// heap.Insert(3);
@@ -103,7 +103,7 @@ namespace ADN.DataStructures
         /// <returns>Value at the top of the Heap.</returns>
         /// <example>
         /// <code lang="csharp">
-        /// var heap = new Heap<int>(1);
+        /// <![CDATA[var heap = new Heap<int>(1);]]>
         /// heap.Insert(1);
         /// heap.Insert(2);
         /// heap.Insert(3);

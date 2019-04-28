@@ -181,11 +181,88 @@
             </summary>
             <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
         </member>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.Count" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Insert(`0)" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:ADN.DataStructures.Heap`1.IsEmpty" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Peek" -->
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:ADN.DataStructures.Heap`1.Remove" -->
+        <member name="P:ADN.DataStructures.Heap`1.Count">
+            <summary>
+            Current size of the Heap.
+            </summary>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var heap = new Heap<int>(2);]]>
+            heap.Insert(1);
+            heap.Insert(2);
+            var result = heap.Count;
+            
+            /*
+            result is 2
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.Insert(`0)">
+            <summary>
+            Add a new value to the Heap.
+            </summary>
+            <param name="val">New value.</param>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var heap = new Heap<int>(1);]]>
+            heap.Insert(1);
+            </code>
+            </example>
+        </member>
+        <member name="P:ADN.DataStructures.Heap`1.IsEmpty">
+            <summary>
+            Test to see if the Heap is empty.
+            </summary>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var heap = new Heap<int>(1);]]>
+            var result = heap.IsEmpty;
+            
+            /*
+            result is true
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.Peek">
+            <summary>
+            View the value currently at the top of the Heap.
+            </summary>
+            <returns>Value at the top of the Heap.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var heap = new Heap<int>(1);]]>
+            heap.Insert(1);
+            heap.Insert(2);
+            heap.Insert(3);
+            var result = heap.Peek();
+            
+            /*
+            result is 1
+            */
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.Heap`1.Remove">
+            <summary>
+            Remove the value currently at the top of the Heap and return it.
+            </summary>
+            <returns>Value at the top of the Heap.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var heap = new Heap<int>(1);]]>
+            heap.Insert(1);
+            heap.Insert(2);
+            heap.Insert(3);
+            var result = heap.Remove();
+            
+            /*
+            result is 1
+            */
+            </code>
+            </example>
+        </member>
         <member name="T:ADN.DataStructures.IHeap`1">
             <summary>
             Array-based Heap implementation.

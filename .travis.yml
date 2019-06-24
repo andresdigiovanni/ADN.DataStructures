@@ -2,8 +2,16 @@ language: csharp
 solution: ADN.DataStructures.sln
 mono: latest
 dotnet: 2.0.0
+
+addons:
+  sonarcloud:
+    organization: "andresdigiovanni-github"
+    token:
+      secure: ${SONAR_TOKEN}
+
 script:
   - dotnet restore
   - dotnet build ./src/ADN.DataStructures/
   - dotnet build ./tests/ADN.DataStructures.Tests/
   - dotnet test ./tests/ADN.DataStructures.Tests/
+  - sonar-scanner

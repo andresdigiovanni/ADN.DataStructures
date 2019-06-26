@@ -6,12 +6,12 @@ dotnet: 2.0.0
 addons:
   sonarcloud:
     organization: "andresdigiovanni-github"
-    token:
-      secure: ${SONAR_TOKEN}
+
+before_install:
+  - bash ./tools/travis-ci-install-sonar.sh
+
+install:
+  - dotnet restore
 
 script:
-  - dotnet restore
-  - dotnet build ./src/ADN.DataStructures/
-  - dotnet build ./tests/ADN.DataStructures.Tests/
-  - dotnet test ./tests/ADN.DataStructures.Tests/
-  - sonar-scanner
+  - bash ./tools/travis-ci-build.sh

@@ -9,6 +9,23 @@ ADN.DataStructures is a cross-platform open-source library which provides data s
 [![Quality](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.DataStructures&metric=alert_status)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.DataStructures)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Basic usage
+
+Example Max-Heap structure:
+
+```csharp
+var heap = new MaxHeap<int>(1);
+
+for (int i = 0; i <= 1000; i++)
+{
+    heap.Insert(i);
+}
+
+var value = heap.Peek(); // 1000
+heap.Remove();
+value = heap.Peek(); // 999
+```
+
 ## Installation
 
 ADN.DataStructures runs on Windows, Linux, and macOS.

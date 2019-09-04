@@ -10,11 +10,8 @@ namespace ADN.DataStructures
     /// </summary>
     public class BidirHashtable
     {
-        private Hashtable _htFwd = new Hashtable();
-        private Hashtable _htBkwd = new Hashtable();
-
-        static readonly object _locker = new object();
-
+        private readonly Hashtable _forward = new Hashtable();
+        private readonly Hashtable _reverse = new Hashtable();
 
         /// <summary>
         /// Adds an element with the specified key and value into the BidirHashtable.
@@ -29,11 +26,8 @@ namespace ADN.DataStructures
         /// </example>
         public void Add(object key, object val)
         {
-            lock (_locker)
-            {
-                _htFwd.Add(key, val);
-                _htBkwd.Add(val, key);
-            }
+            _forward.Add(key, val);
+            _reverse.Add(val, key);
         }
 
         /// <summary>
@@ -48,11 +42,8 @@ namespace ADN.DataStructures
         /// </example>
         public void Clear()
         {
-            lock (_locker)
-            {
-                _htFwd.Clear();
-                _htBkwd.Clear();
-            }
+            _forward.Clear();
+            _reverse.Clear();
         }
 
         /// <summary>
@@ -73,10 +64,7 @@ namespace ADN.DataStructures
         /// </example>
         public bool Contains(object key)
         {
-            lock (_locker)
-            {
-                return _htFwd.Contains(key);
-            }
+            return _forward.Contains(key);
         }
 
         /// <summary>
@@ -97,10 +85,7 @@ namespace ADN.DataStructures
         /// </example>
         public bool ContainsValue(object val)
         {
-            lock (_locker)
-            {
-                return _htBkwd.Contains(val);
-            }
+            return _reverse.Contains(val);
         }
 
         /// <summary>
@@ -121,10 +106,7 @@ namespace ADN.DataStructures
         /// </example>
         public int Count()
         {
-            lock (_locker)
-            {
-                return _htFwd.Count;
-            }
+            return _forward.Count;
         }
 
         /// <summary>
@@ -145,10 +127,7 @@ namespace ADN.DataStructures
         /// </example>
         public dynamic Get(object key)
         {
-            lock (_locker)
-            {
-                return _htFwd[key];
-            }
+            return _forward[key];
         }
 
         /// <summary>
@@ -169,10 +148,7 @@ namespace ADN.DataStructures
         /// </example>
         public dynamic GetKey(object val)
         {
-            lock (_locker)
-            {
-                return _htBkwd[val];
-            }
+            return _reverse[val];
         }
 
         /// <summary>
@@ -194,11 +170,8 @@ namespace ADN.DataStructures
         /// </example>
         public void Set(object key, object val)
         {
-            lock (_locker)
-            {
-                _htFwd[key] = val;
-                _htBkwd[val] = key;
-            }
+            _forward[key] = val;
+            _reverse[val] = key;
         }
 
         /// <summary>
@@ -214,12 +187,9 @@ namespace ADN.DataStructures
         /// </example>
         public void Remove(object key)
         {
-            lock (_locker)
-            {
-                object val = _htFwd[key];
-                _htFwd.Remove(key);
-                _htBkwd.Remove(val);
-            }
+            object val = _forward[key];
+            _forward.Remove(key);
+            _reverse.Remove(val);
         }
 
         /// <summary>
@@ -235,12 +205,9 @@ namespace ADN.DataStructures
         /// </example>
         public void RemoveValue(object val)
         {
-            lock (_locker)
-            {
-                object key = _htBkwd[val];
-                _htFwd.Remove(key);
-                _htBkwd.Remove(val);
-            }
+            object key = _reverse[val];
+            _forward.Remove(key);
+            _reverse.Remove(val);
         }
     }
 }

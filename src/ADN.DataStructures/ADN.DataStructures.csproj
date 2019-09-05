@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProjectGuid>{870C9FBD-AD49-4B53-9B64-23AA83D18BB2}</ProjectGuid>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Title>ADN.DataStructures</Title>
     <Authors>Andrés Di Giovanni</Authors>
     <Company>ADN</Company>	

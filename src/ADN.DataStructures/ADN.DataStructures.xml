@@ -4,6 +4,149 @@
         <name>ADN.DataStructures</name>
     </assembly>
     <members>
+        <member name="T:ADN.DataStructures.BidirDictionary`2">
+            <summary>
+            Represents a two-way Dictionary.
+            </summary>
+            <typeparam name="T1">The first type of the elements in the dictionary.</typeparam>
+            <typeparam name="T2">The second type of the elements in the dictionary.</typeparam>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the BidirDictionary.
+            </summary>
+            <returns>Returns an enumerator that iterates through the forward Dictionary.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            foreach (var item in bidirDictionary)
+            {
+                Console.WriteLine($"T1: {item.Key} T2: {item.Value}");
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds an element into the BidirDictionary.
+            </summary>
+            <param name="t1">The first type of the elements in the dictionary.</param>
+            <param name="t2">The second type of the elements in the dictionary.</param>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Clear">
+            <summary>
+            Removes all elements from the BidirDictionary.
+            </summary>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            bidirDictionary.Clear();
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Contains(`0)">
+            <summary>
+            Determines whether the BidirDictionary contains a T1 item.
+            </summary>
+            <param name="t1">The first type of the elements in the dictionary.</param>
+            <returns>True if the BidirDictionary contains T1 element; otherwise, false.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            var exists = bidirDictionary.Contains(0);
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.ContainsReverse(`1)">
+            <summary>
+            Determines whether the BidirDictionary contains a T2 item.
+            </summary>
+            <param name="t2">The second type of the elements in the dictionary.</param>
+            <returns>True if the BidirDictionary contains T2 element; otherwise, false.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            var exists = bidirDictionary.ContainsReverse("foo");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Count">
+            <summary>
+            Gets the number of elements contained in the BidirDictionary.
+            </summary>
+            <returns>The number of items contained in the BidirDictionary.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            var count = bidirDictionary.Count();
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Get(`0)">
+            <summary>
+            Gets the value associated with T1 element.
+            </summary>
+            <param name="t1">The first type of the elements in the dictionary.</param>
+            <returns>The value associated with T1 element.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            var t1 = bidirDictionary.Get(0);
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.GetReverse(`1)">
+            <summary>
+            Gets the value associated with T2 element.
+            </summary>
+            <param name="t2">The second type of the elements in the dictionary.</param>
+            <returns>The value associated with T2 element.</returns>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            var t2 = bidirDictionary.GetReverse("foo");
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.Remove(`0)">
+            <summary>
+            Removes the element T1 from the BidirDictionary.
+            </summary>
+            <param name="t1">The T1 element to remove.</param>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            bidirDictionary.Remove(0);
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.BidirDictionary`2.RemoveReverse(`1)">
+            <summary>
+            Removes the element T2 from the BidirDictionary.
+            </summary>
+            <param name="t2">The T2 element to remove.</param>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var bidirDictionary = new BidirDictionary<int, string>();]]>
+            bidirDictionary.Add(0, "foo");
+            bidirDictionary.RemoveReverse("foo");
+            </code>
+            </example>
+        </member>
         <member name="T:ADN.DataStructures.BidirHashtable">
             <summary>
             Represents a collection of key/value pairs that are organized based on both hash code.

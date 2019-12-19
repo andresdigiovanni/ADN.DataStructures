@@ -464,6 +464,92 @@
             </summary>
             <param name="minSize">The minimum number of elements the heap is expected to hold.</param>
         </member>
+        <member name="T:ADN.DataStructures.MultilevelQueue`1">
+            <summary>
+            Queue with priority elements.
+            </summary>
+            <typeparam name="T">Kind of thing being stored in the ADN.DataStructures.MultilevelQueue.</typeparam>
+        </member>
+        <member name="M:ADN.DataStructures.MultilevelQueue`1.#ctor(System.Int32,System.UInt32)">
+            <summary>
+            Create a new ADN.DataStructures.MultilevelQueue.
+            </summary>
+            <param name="priorityLevels">Determines how many levels of messages priority exists.</param>
+            <param name="secondsToAgingItems">Seconds to aging elements and increase the priority.</param>
+        </member>
+        <member name="M:ADN.DataStructures.MultilevelQueue`1.Dispose">
+            <summary>
+            Releases all resources used by the current instance of ADN.DataStructures.MultilevelQueue.
+            </summary>
+        </member>
+        <member name="P:ADN.DataStructures.MultilevelQueue`1.Count">
+             <summary>
+             Gets the number of elements contained in the ADN.DataStructures.MultilevelQueue.
+             </summary>
+             <returns>The number of elements contained in the ADN.DataStructures.MultilevelQueue.</returns>
+             <example>
+             <code lang="csharp">
+             <![CDATA[var queue = new MultilevelQueue<string>(3, 10);]]>
+             queue.Add("item low priority", 9);
+             queue.Add("item high priority", 0);
+             var result = queue.Count;
+            
+             /*
+             result is 2
+             */
+             </code>
+             </example>
+        </member>
+        <member name="M:ADN.DataStructures.MultilevelQueue`1.Add(`0,System.Int32)">
+            <summary>
+            Add a new value with the specific priority.
+            </summary>
+            <param name="item">New item.</param>
+            <param name="priority">Priority.</param>
+            <example>
+            <code lang="csharp">
+            <![CDATA[var queue = new MultilevelQueue<string>(3, 10);]]>
+            queue.Add("item low priority", 9);
+            queue.Add("item high priority", 0);
+            </code>
+            </example>
+        </member>
+        <member name="M:ADN.DataStructures.MultilevelQueue`1.Peek">
+             <summary>
+             View the value currently at the top of the queue.
+             </summary>
+             <returns>Value at the top of the queue.</returns>
+             <example>
+             <code lang="csharp">
+             <![CDATA[var queue = new MultilevelQueue<string>(3, 10);]]>
+             queue.Add("item low priority", 9);
+             queue.Add("item high priority", 0);
+             var result = queue.Peek();
+            
+             /*
+             result is "item high priority"
+             */
+             </code>
+             </example>
+        </member>
+        <member name="M:ADN.DataStructures.MultilevelQueue`1.Remove">
+             <summary>
+             Remove the value currently at the top of the ADN.DataStructures.MultilevelQueue and return it.
+             </summary>
+             <returns>Value at the top of the queue.</returns>
+             <example>
+             <code lang="csharp">
+             <![CDATA[var queue = new MultilevelQueue<string>(3, 10);]]>
+             queue.Add("item low priority", 9);
+             queue.Add("item high priority", 0);
+             var result = queue.Remove();
+            
+             /*
+             result is "item high priority"
+             */
+             </code>
+             </example>
+        </member>
         <member name="T:ADN.DataStructures.TwoKeyHashtable">
             <summary>
             Represents a collection of 2-keys/value trios that are organized based on the hash code of the 2-keys.

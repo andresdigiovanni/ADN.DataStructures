@@ -64,7 +64,6 @@ namespace ADN.DataStructures.Tests
             {
                 heap.Remove();
             }
-            var result = heap.Count;
 
             Assert.True(heap.IsEmpty);
         }
